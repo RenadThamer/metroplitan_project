@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>METROPLITAN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="Card container">
+    <div class="card-group" *ngFor="let painting of paintings">
+
+      <ion-card>
+        <img [src]="painting.primaryImage" [alt]="painting.title" />
+        <div class="like-button-container">
+          <ion-button  (click)="likePainting(painting)" fill="clear" color="danger">
+            <ion-icon [name]="painting.liked ? 'heart' : 'heart-outline'"></ion-icon>
+          </ion-button>
+        </div>
+        <ion-card-header>
+        
+          <ion-card-title>{{ painting.title }}</ion-card-title>
+          <ion-card-subtitle>  {{ painting.artistDisplayName ? painting.artistDisplayName : 'unknown' }}</ion-card-subtitle>
+          <ion-card-subtitle class="department-subtitle">{{ painting.department }}</ion-card-subtitle>
+          
+          
+          <!--<ion-card-subtitle class="department-subtitle">{{ painting.department }}</ion-card-subtitle>
+          <ion-card-subtitle>  {{ painting.artistDisplayName ? painting.artistDisplayName : 'unknown' }}</ion-card-subtitle>
+          <ion-card-title>{{ painting.title }}</ion-card-title>-->
+
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button color="secondary" expand="block" (click)="goToDetailsPage(painting.objectID)">View Details</ion-button>
+        </ion-card-content>
+        
+      
+
+
+      </ion-card>
+
+    </div>
+  </div>
+  
+</ion-content>
+

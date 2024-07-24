@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>METROPLITAN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div *ngIf="painting">
+    
+    <ion-card>
+      <img [src]="painting.primaryImage" [alt]="painting.title" />
+      <ion-card-header>
+        <ion-card-title>Artwork Details</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <p><strong>Title:</strong> {{ painting.title }}</p>
+          </ion-item>
+          <ion-item>
+            <p><strong>Artist:</strong> {{ painting.artistDisplayName }}</p>
+          </ion-item>
+          <ion-item>
+            <p><strong>Art dimension:</strong> {{ painting.dimensions }}</p>
+          </ion-item>
+          <ion-item>
+            <p><strong>Art date:</strong> {{ painting.objectDate }}</p>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+ 
+  <ion-card *ngIf="comments.length > 0">
+    <ion-card-header>
+      <ion-card-title>Comments ({{ commentCount }})</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let comment of comments">
+          <ion-label>
+            <h2>{{ comment.username }}</h2>
+            <p>{{ comment.creation_date }}</p>
+            <p>{{ comment.comment }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="comments.length === 0">
+    <ion-card-content>
+      <p>No comments available.</p>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+
+
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Add Comments</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Comment Form -->
+      <form *ngIf="showCommentForm" (ngSubmit)="submitComment()">
+        <ion-item class="soft-green-item">
+          <ion-label position="floating" class="soft-green-label">Name:</ion-label>
+          <ion-input [(ngModel)]="newComment.username" name="username" required (ionInput)="onInputChange()"></ion-input>
+        </ion-item>
+        <ion-item class="soft-green-item">
+          <ion-label position="floating" class="soft-green-label">Comment:</ion-label>
+          <ion-textarea [(ngModel)]="newComment.comment" name="comment" required (ionInput)="onInputChange()"></ion-textarea>
+        </ion-item>
+        
+        <div *ngIf="validationMessage" class="validation-message faint-red">
+          {{ validationMessage }}
+        </div>
+        
+        <ion-button color="secondary" expand="block" type="submit" [disabled]="!isFormValid">Send</ion-button>
+        <ion-button color="secondary" expand="block" (click)="cancelComment()">Cancel</ion-button>
+      </form>
+      <ion-button *ngIf="!showCommentForm" (click)="toggleCommentForm()" expand="block" color="secondary">Comment</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+

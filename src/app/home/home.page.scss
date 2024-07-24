@@ -1,0 +1,83 @@
+ion-content {
+  --ion-background-color: var(--ion-color-primary)
+  
+}
+
+
+ion-card {
+  --ion-background-color: #F0F2F4; /*card color */ 
+  margin: 0 50px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+/*-------------------------------------------------- */
+
+ion-card-title {
+  --color: #060606;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: serif;
+  margin-top: 2px;
+}
+
+/*ion-card-title {
+  --color: #060606;
+  font-size: 18px;
+  font-family: 'Georgia', serif;
+  margin-top: 2px;
+}*/
+
+ion-card-subtitle {
+  --color: #626262;
+  font-size: 9px;
+  font-family: sans-serif;
+  margin-top: 5px;
+}
+
+/*ion-card-subtitle {
+  --color: #626262;
+  font-size: 9px;
+  font-family: 'Arial', sans-serif;
+  margin-top: 5px;
+}*/
+
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+ion-title {
+  font-family: 'Georgia', serif;
+}
+
+ion-button {
+  font-family: 'Roboto', serif;
+}
+
+ion-card:hover {
+  transform: scale(1.04);
+}
+
+ion-card img {
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+.like-button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1px;
+}
+
+.department-subtitle {
+  font-family: sans-serif; /* Change to your desired font                           font-family: 'Arial', sans-serif;   */  
+  font-size: 9px; /* Adjust font size as needed */
+  color: #060606; /* Change to your desired color */
+  font-weight: bold; /* Optional: adjust font weight */
+}
+
+
