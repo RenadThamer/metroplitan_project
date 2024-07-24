@@ -11,8 +11,9 @@
         <ion-card>
           <img [src]="painting.primaryImage" [alt]="painting.title" />
           <ion-card-header>
-            <ion-card-subtitle>{{ painting.artistDisplayName }}</ion-card-subtitle>
             <ion-card-title>{{ painting.title }}</ion-card-title>
+            <ion-card-subtitle>  {{ painting.artistDisplayName ? painting.artistDisplayName : 'unknown' }}</ion-card-subtitle>
+            <ion-card-subtitle class="department-subtitle">{{ painting.department }}</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
             <ion-button color="secondary" expand="block" (click)="goToDetailsPage(painting.objectID)">

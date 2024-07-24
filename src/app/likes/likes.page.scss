@@ -14,15 +14,24 @@ ion-card {
 ion-card-title {
   --color: #060606;
   font-size: 15px;
+  font-weight: bold;
   font-family: 'Georgia', serif;
   margin-top: 2px;
 }
 
+
 ion-card-subtitle {
   --color: #626262;
-  font-size: 9px;
+  font-size: 10px;
   font-family: 'Arial', sans-serif;
   margin-top: 5px;
+}
+
+.department-subtitle {
+  font-family: 'Arial', sans-serif; /* Change to your desired font                           font-family: 'Arial', sans-serif;   */  
+  font-size: 10px; /* Adjust font size as needed */
+  color: #060606; /* Change to your desired color */
+  font-weight: bold; /* Optional: adjust font weight */
 }
 
 ion-content {
@@ -38,6 +47,7 @@ ion-content {
 
 ion-title {
   font-family: 'Georgia', serif;
+  text-align: center;
 }
 
 ion-button {

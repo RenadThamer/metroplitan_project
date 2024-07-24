@@ -11,11 +11,21 @@
 
       <ion-card>
         <img [src]="painting.primaryImage" [alt]="painting.title" />
+
+
         <div class="like-button-container">
-          <ion-button  (click)="likePainting(painting)" fill="clear" color="danger">
-            <ion-icon [name]="painting.liked ? 'heart' : 'heart-outline'"></ion-icon>
+          <ion-button class="large-button" (click)="likePainting(painting)" fill="clear" color="danger">
+              <ion-icon [name]="painting.liked ? 'heart' : 'heart-outline'"></ion-icon>
           </ion-button>
         </div>
+
+
+        <!--<div class="like-button-container">
+          <ion-button (click)="likePainting(painting)" fill="clear" color="danger">
+          <ion-icon [name]="painting.liked ? 'heart' : 'heart-outline'"></ion-icon>
+          </ion-button>
+        </div>-->
+
         <ion-card-header>
         
           <ion-card-title>{{ painting.title }}</ion-card-title>

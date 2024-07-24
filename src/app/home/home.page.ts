@@ -11,6 +11,7 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class HomePage implements OnInit {
   paintings: any[] = [];
+  
 
   constructor(
     private metApiService: MetApiService,

@@ -7,8 +7,8 @@ ion-content {
 ion-card {
   --ion-background-color: #F0F2F4; /*card color */ 
   margin: 0 50px;
-  margin-bottom: 16px;
-  margin-top: 16px;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 /*-------------------------------------------------- */
@@ -17,7 +17,7 @@ ion-card-title {
   --color: #060606;
   font-size: 18px;
   font-weight: bold;
-  font-family: serif;
+  font-family:  'Georgia', serif;
   margin-top: 2px;
 }
 
@@ -30,8 +30,8 @@ ion-card-title {
 
 ion-card-subtitle {
   --color: #626262;
-  font-size: 9px;
-  font-family: sans-serif;
+  font-size: 12px;
+  font-family: 'Arial', sans-serif;
   margin-top: 5px;
 }
 
@@ -52,6 +52,7 @@ ion-content {
 
 ion-title {
   font-family: 'Georgia', serif;
+  text-align: center;
 }
 
 ion-button {
@@ -71,11 +72,50 @@ ion-card img {
   display: flex;
   justify-content: flex-end;
   padding: 1px;
+  
+  }
+
+.large-button {
+  font-size: 1.5em; /* Adjust the size as needed */
+  
+
 }
 
+.large-button ion-icon {
+  font-size: 1.5em; /* Adjust the icon size as needed */
+}
+
+
+
+
+.large-button::part(native) {
+    box-shadow: none !important; /* Remove shadow */
+    --ripple-color: #f0f2f4; /* Set ripple color */
+}
+
+.large-button {
+    --box-shadow: none; /* Ionic 5/6 variable for box shadow */
+    --ripple-color: #f0f2f4; /* Set ripple color */
+}
+
+.large-button:focus {
+    box-shadow: none !important; /* Remove focus shadow */
+    outline: none !important; /* Remove outline */
+    --ripple-color: #f0f2f4; /* Ensure ripple color on focus */
+}
+
+.large-button:active {
+    box-shadow: none !important; /* Remove active shadow */
+    outline: none !important; /* Remove outline */
+    --ripple-color: #f0f2f4; /* Ensure ripple color on active */
+}
+
+
+
+
 .department-subtitle {
-  font-family: sans-serif; /* Change to your desired font                           font-family: 'Arial', sans-serif;   */  
-  font-size: 9px; /* Adjust font size as needed */
+  font-family: 'Arial', sans-serif; /* Change to your desired font                           font-family: 'Arial', sans-serif;   */  
+  font-size: 12px; /* Adjust font size as needed */
   color: #060606; /* Change to your desired color */
   font-weight: bold; /* Optional: adjust font weight */
 }
